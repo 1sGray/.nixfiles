@@ -6,8 +6,8 @@ curl https://raw.githubusercontent.com/1sgray/.nixfiles/main/disk/disk-config.ni
 
 # Replace <disk-name> with the name of your disk
 echo Disk Name:
-read diskName
-sed 's/<disk-name>/${diskName}/' /tmp/disk-config.nix
+read -t 15 diskName
+sed "s/<disk-name>/${diskName}/" /tmp/disk-config.nix
 echo Disk ${diskName} selected
 
 # Run disko to partition, format and mount your disks
