@@ -4,7 +4,7 @@
       main = {
         devie = "/dev/sdc";
         type = "disk";
-        ontent = {
+        content = {
           type = "gpt";
 
           partitions = {
