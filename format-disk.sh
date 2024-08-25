@@ -11,6 +11,6 @@ sed 's/<disk-name>/${diskName}/' /tmp/disk-config.nix
 echo Disk ${diskName} selected
 
 # Run disko to partition, format and mount your disks
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/disk-config.nix
+#sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/disk-config.nix
 
 
