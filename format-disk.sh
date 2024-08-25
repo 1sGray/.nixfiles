@@ -2,7 +2,7 @@
 
 # Copy the disk configuration to your machine
 cd /tmp
-curl https://raw.githubusercontent.com/1sGray/.nixfiles/main/disk/disk-config.nix -o /tmp/disk-config.nix
+curl https://raw.githubusercontent.com/1sgray/.nixfiles/main/disk/disk-config.nix -o /tmp/disk-config.nix
 
 # Replace <disk-name> with the name of your disk
 read -p 'Disk Name: ' diskName
