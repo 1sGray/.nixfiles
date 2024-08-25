@@ -24,7 +24,6 @@
         #themePolarity = "dark";
         #wallpaper = "wallhaven-r28vlq.png"; # name of the image in .nixfiles/assets/
         #profilePic = "love_my_music_by_kerochao.jpg" # name of the image in .nixfiles/assets/
-
       };
       # ---- ---- ---- #
       
@@ -55,7 +54,16 @@
           inputs.hyprpanel.overlay.${systemSettings.system}
         ];
       };
-             
+
+      # Systems that can run tests:
+      supportedSystems = [ "aarch64-linux" "i686-linux" "x86_64-linux" ];
+
+      # Function to generate a set based on supported systems:
+      forAllSystems = inputs.nixpkgs.lib.genAttrs supportedSystems;
+
+      # Attribute set of nixpkgs for each system:
+      nixpkgsFor = forAllSystems (system: import inputs.nixpkgs { inherit system; });
+
     in {
       
       nixosConfigurations = {
@@ -96,6 +104,28 @@
         };
         
       };
+      
+      packages = forAllSystems (system:
+        let pkgs = nixpkgsFor.${system};
+        in {
+          default = self.packages.${system}.install;
+
+          install = pkgs.writeShellApplication {
+            name = "install";
+            runtimeInputs = with pkgs; [ git ]; # deps
+            text = ''${./install.sh} "$@"''; # the script
+          };
+        }
+      );
+      
+      apps = forAllSystems (system: {
+       default = self.apps.${system}.install;
+
+       install = {
+         type = "app";
+         program = "${self.packages.${system}.install}/bin/install";
+       };
+      });
     };
     
   inputs = {
