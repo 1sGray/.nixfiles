@@ -1,6 +1,6 @@
 
 {
-  description = "my first flake based on LibrePhoenix's files";
+  description = "my first flake based on LibrePhoenix's files (rev3.7)";
   
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
       
@@ -24,6 +24,7 @@
         #themePolarity = "dark";
         #wallpaper = "wallhaven-r28vlq.png"; # name of the image in .nixfiles/assets/
         #profilePic = "love_my_music_by_kerochao.jpg" # name of the image in .nixfiles/assets/
+
       };
       # ---- ---- ---- #
       
@@ -35,7 +36,11 @@
         profile = "personal"; # select a profile defined in ./profiles
         timezone = "Asia/Dubai";
         locale = "en_US.UTF-8";
-        
+        bootMode = "uefi"; # uefi or bios
+        bootMountPath = "/boot"; # mount path for efi boot partition; only used for uefi boot mode
+        grubDevice = ""; # device identifier for grub; only used for legacy (bios) boot mode
+        gpuType = "amd"; # amd, intel or nvidia; only makes some slight mods for amd at the moment
+
       };
       # ---- ---- ---- #
       
