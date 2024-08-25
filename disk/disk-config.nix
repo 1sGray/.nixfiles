@@ -9,7 +9,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "<disk-name>";
+        device = "sdc";
         content = {
           type = "gpt";
           partitions = {
