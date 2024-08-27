@@ -14,8 +14,8 @@
     # ----- RICES ----- #
     #Sets up the Desktop environment and Customisation
     # uncomment one, comment the rest
-    #./rice-modules/default-rice.nix # Default Rice
-    ./rice-modules/hyprpanel-rice.nix # HyprPanel by
+    ./rice-modules/default-rice.nix # Default Rice
+    #./rice-modules/hyprpanel-rice.nix # HyprPanel by
   ];
   
 }

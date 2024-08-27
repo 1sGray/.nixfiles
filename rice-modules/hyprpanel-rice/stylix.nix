@@ -1,7 +1,7 @@
 {config, pkgs, lib, inputs, themeSettings, ...}:
 
 let
-  wallpaperPath = ../../../assets/${themeSettings.wallpaper};
+  wallpaperPath = ../../assets/${themeSettings.wallpaper};
 in
 
 {

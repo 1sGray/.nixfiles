@@ -14,13 +14,13 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Flakes installation
   
   # Use the systemd-boot EFI boot loader.
-  #boot.loader.systemd-boot.enable = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Use the GRUB EFI boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.efiInstallAsRemovable = true;
+  #boot.loader.grub.enable = true;
+  #boot.loader.grub.efiSupport = true;
+  #boot.loader.grub.efiInstallAsRemovable = true;
   
   # Timezone and locale
   time.timeZone = systemSettings.timezone; # time zone
