@@ -50,9 +50,9 @@
         config = { allowUnfree = true; };
         
         
-        overlays = [
-          inputs.hyprpanel.overlay.${systemSettings.system}
-        ];
+      #overlays = [
+      #   inputs.hyprpanel.overlay.${systemSettings.system}
+      # ]; THIS CAUSES HOME-MANAGER TO BREAK
       };
 
       # Systems that can run tests:
