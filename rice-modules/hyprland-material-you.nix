@@ -2,6 +2,12 @@
 
 {
   
+  imports = [ 
+    ./hyprland-material-you/ags.nix
+    ./hyprland-material-you/hypr-moduled.nix
+    ./hyprland-material-you/stylix.nix
+    ./hyprland-material-you/keybinds.nix
+  ];
   home.package = with pkgs [
     wl-clipboard-rs
     material-icons
