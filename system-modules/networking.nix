@@ -31,6 +31,7 @@
   };
   environment.systemPackages = with pkgs; [
     bluez-tools # set of tools to manage bluetooth devices
+    networkmanagerapplet
   ];
   # ----- ----- ----- #
 }
