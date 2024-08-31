@@ -33,7 +33,10 @@
       #animation = "windows,1,10,myepiccurve,slide";
       #animation = "fade,0";
       
-      env = [ "XDG_CURRENT_DESKTOP,Hyprland" "XDG_SESSION_TYPE,wayland"  "XDG_SESSION_DESKTOP,Hyprland" "QT_QPA_PLATFORM,wayland;xcb" "QT_WAYLAND_DISABLE_WINDOWDECORATION,1" "QT_AUTO_SCREEN_SCALE_FACTOR,1" "QT_QPA_PLATFORMTHEME,qt5ct" "MOZ_ENABLE_WAYLAND,1" "GDK_SCALE,1" "SDL_VIDEODRIVER,wayland" "ELECTRON_ENABLE_WAYLAND, 1" "ELECTRON_OZONE_PLATFORM_HINT, wayland"];
+      env = [ "XDG_CURRENT_DESKTOP,Hyprland" "XDG_SESSION_TYPE,wayland"  "XDG_SESSION_DESKTOP,Hyprland" "QT_QPA_PLATFORM,wayland;xcb" "QT_WAYLAND_DISABLE_WINDOWDECORATION,1" "QT_AUTO_SCREEN_SCALE_FACTOR,1" "QT_QPA_PLATFORMTHEME,qt5ct" "MOZ_ENABLE_WAYLAND,1" "GDK_SCALE,1" "SDL_VIDEODRIVER,wayland" "ELECTRON_ENABLE_WAYLAND, 1" "ELECTRON_OZONE_PLATFORM_HINT, wayland" 
+
+        "BROWSER, brave  #! -@browser" "TERMINAL, kitty  #! -@terminal" "EDITOR, code  #! -@editor" "FILEMANAGER, thunar  #! -@filemanager" "XDG_UTILS_TERMINAL, kitty  #! -@terminal" "XDG_UTILS_BROWSER, brave  #! -@browser" "XDG_UTILS_FILEMANAGER, thunar  #! -@filemanager"
+      ];
       
       general = {
         gaps_in = 5;
@@ -120,6 +123,7 @@
         exec-once = wl-paste --type text --watch cliphist store #Stores only text data
         
         exec-once = wl-paste --type image --watch cliphist store #Stores only image data
+        exec-once = hyprctl setcursor Bibata-Modern-Ice 24
       ";
       
     plugins = [
