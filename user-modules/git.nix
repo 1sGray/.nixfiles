@@ -2,7 +2,7 @@
 
 {
   
-  home.packages = [ pkgs.git ];
+  #home.packages = [ pkgs.git ];
   programs.git ={
     enable = true;
     userName = userSettings.name;

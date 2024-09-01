@@ -20,13 +20,13 @@
     pulse.enable = true;
     
     # WirePlumber, a modular session / policy manager for PipeWire
-    wireplumber = {
-      enable = true;
-      # List of packages that provide WirePlumber configuration, in the form of share/wireplumber/*/*.conf files.
-      #configPackages = [];
-    
-      #extraConfig = {};
-    };
+    #wireplumber = {
+    # enable = true;
+    # # List of packages that provide WirePlumber configuration, in the form of share/wireplumber/*/*.conf files.
+    # #configPackages = [];
+    #
+    # #extraConfig = {};
+    #};
     
   };
   

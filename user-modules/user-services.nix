@@ -1,7 +1,7 @@
 {config, pkgs, lib, inputs, ...}:
 
 {
-  home.packages = [ pkgs.udiskie ];  
+  #home.packages = [ pkgs.udiskie ];  
   # automounter for udisks
   services.udiskie = {
     enable = true;

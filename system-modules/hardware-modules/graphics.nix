@@ -3,7 +3,8 @@
 
 {
   
-  hardware.opengl= {
+  #hardware.opengl= {
+  hardware.graphics = {
     enable = true;
     extraPackages = [ pkgs.rocmPackages.clr.icd ];
     # driSupport = true; # Whether to enable accelerated OpenGL rendering through the Direct Rendering Interface (DRI), ( seems to no longer be needed )
