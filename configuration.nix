@@ -7,8 +7,16 @@
 {
   
   imports = [
-      ./hardware-configuration.nix # Include the results of the hardware scan.
-      ./system-modules/system-modules.nix
+    ./hardware-configuration.nix # Include the results of the hardware scan.
+    ./system-modules/hardware-modules/power.nix
+    ./system-modules/hardware-modules/graphics.nix
+    ./system-modules/hardware-modules/audio.nix
+    ./system-modules/hardware-modules/peripherals.nix
+    ./system-modules/system-users.nix
+    ./system-modules/networking.nix
+    ./system-modules/system-services.nix
+    ./system-modules/security.nix
+    ./system-modules/system-themes.nix
 ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Flakes installation
@@ -23,19 +31,19 @@
   #boot.loader.grub.efiInstallAsRemovable = true;
   
   # Timezone and locale
-  time.timeZone = systemSettings.timezone; # time zone
-  i18n.defaultLocale = systemSettings.locale;
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = systemSettings.locale;
-    LC_IDENTIFICATION = systemSettings.locale;
-    LC_MEASUREMENT = systemSettings.locale;
-    LC_MONETARY = systemSettings.locale;
-    LC_NAME = systemSettings.locale;
-    LC_NUMERIC = systemSettings.locale;
-    LC_PAPER = systemSettings.locale;
-    LC_TELEPHONE = systemSettings.locale;
-    LC_TIME = systemSettings.locale;
-  };
+  #time.timeZone = systemSettings.timezone; # time zone
+  #i18n.defaultLocale = systemSettings.locale;
+  #i18n.extraLocaleSettings = {
+  #  LC_ADDRESS = systemSettings.locale;
+  #  LC_IDENTIFICATION = systemSettings.locale;
+  #  LC_MEASUREMENT = systemSettings.locale;
+  #  LC_MONETARY = systemSettings.locale;
+  #  LC_NAME = systemSettings.locale;
+  #  LC_NUMERIC = systemSettings.locale;
+  #  LC_PAPER = systemSettings.locale;
+  #  LC_TELEPHONE = systemSettings.locale;
+  #  LC_TIME = systemSettings.locale;
+  #};
 
   
   system.stateVersion = "24.05"; # Did you read the comment?
